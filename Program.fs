@@ -57,7 +57,7 @@ let main (args : string[]) =
     System.Console.WriteLine("Введите число:")
     let num = System.Int32.Parse(Console.ReadLine())
 
-    System.Console.WriteLine("Сумма цифр числа: {0}", (processDigits num 0 (+) ) )
-    System.Console.WriteLine("Прозведение цифр числа: {0}", (processDigits num 1 (*) ) )
+    System.Console.WriteLine("Сумма цифр числа: {0}", (processDigitsRecursionToTop num (+) ) )
+    System.Console.WriteLine("Прозведение цифр числа: {0}", (processDigitsRecursionToTop num (*) ) )
 
     0
