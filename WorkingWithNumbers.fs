@@ -50,15 +50,15 @@ module NumberOperations =
 
     let rec countEvenNumsThatNotMutuallyPrimeWithNumber (current: int) (num: int) (accum: int)  =
         match current with
-        | x when x >= num -> accum
+        x when x >= num -> accum
         | x when GCD(num, x) <> 1 && x % 2 = 0 -> countEvenNumsThatNotMutuallyPrimeWithNumber (current + 1) num (accum + 1)
         | _ -> countEvenNumsThatNotMutuallyPrimeWithNumber (current + 1) num accum
 
-
-    let rec bypassMutuallyPrimeComponentsInNumber (num: int) (func: int -> int -> int) (accum: int) : int =
-        match num with
-        0 -> accum
-        | _ -> bypassMutuallyPrimeComponentsInNumber (num - 1) func accum
-
     let maxDigitNotDividesOn3 (num: int) : int =
         bypassDigitsWithCondition num (fun a b -> if a > b then a else b) 0 (fun a -> if a % 3 <> 0 then true else false)
+
+    let rec bypassMutuallyPrimeComponentsInNumber (current: int) (num: int) (func: int -> int -> int) (accum: int) : int =
+        match current with
+        x when x >= num -> accum
+        | x when GCD(num, x) = 1 -> bypassMutuallyPrimeComponentsInNumber (current+1) num func (func current accum)
+        | _ -> bypassMutuallyPrimeComponentsInNumber (current+1) num func accum

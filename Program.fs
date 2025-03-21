@@ -127,11 +127,17 @@ let main (args : string[]) =
     let lang_choice = System.Console.ReadLine()
     favouriteLanguage lang_choice
 
-
+    // Задание 16.2
     System.Console.WriteLine("Максимальная цифра, не делящаяся на 3: {0}", (NumberOperations.maxDigitNotDividesOn3 18404))
+
+    // Задание 16.1
+    let res = NumberOperations.countEvenNumsThatNotMutuallyPrimeWithNumber 1 20 0
+    System.Console.WriteLine("{0}", res)
+
 *)
 
-    let res = NumberOperations.countEvenNumsThatNotMutuallyPrimeWithNumber 0 20 0
+    // Задание 13
+    let res = NumberOperations.bypassMutuallyPrimeComponentsInNumber 1 10 (fun a b -> a + b) 0
     System.Console.WriteLine("{0}", res)
 
     0
