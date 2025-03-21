@@ -61,4 +61,7 @@ module NumberOperations =
         match current with
         x when x >= num -> accum
         | x when GCD(num, x) = 1 -> bypassMutuallyPrimeComponentsInNumber (current+1) num func (func current accum)
-        | _ -> bypassMutuallyPrimeComponentsInNumber (current+1) num func accum
+        | _ -> bypassMutuallyPrimeComponentsInNumber (current + 1) num func accum
+
+    let EulerFunction (num: int) : int =
+        bypassMutuallyPrimeComponentsInNumber 1 num (fun x acc -> acc + 1) 0
