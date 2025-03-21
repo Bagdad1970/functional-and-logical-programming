@@ -27,6 +27,16 @@ let volume_cylinder_through_carry r h =
     let square_cylinder_base = square_circle r
     h * square_cylinder_base
 
+let favouriteLanguage (lang: string) : unit =
+    let result =
+        match lang with
+            "F#" | "Prolog" -> "НЕ ПОДЛИЗЫВАЙСЯ"
+            | "Ruby" -> "Язык нормального человека"
+            | "Java" -> "Язык курильщика"
+            | _ -> "Это кто (who)?"
+
+    result |> System.Console.WriteLine
+
 
 [<EntryPoint>]
 let main (args : string[]) =
@@ -112,5 +122,10 @@ let main (args : string[]) =
     let mult_digits = NumberOperations.bypassDigitsWithCondition 1234 mult 1 notThree
     System.Console.WriteLine("Произведение цифр числа, которые не равны 3: {0}", mult_digits)
 
+    System.Console.Write("Какой Ваш любимый язык: ")
+    let lang_choice = System.Console.ReadLine()
+    favouriteLanguage lang_choice
+    favouriteLanguage "Ruby"
+    favouriteLanguage "PHP"
 
     0
