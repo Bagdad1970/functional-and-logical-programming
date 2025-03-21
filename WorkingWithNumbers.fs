@@ -1,4 +1,5 @@
 namespace WorkingWithNumbers
+open System
 
 module NumberOperations = 
 
@@ -47,17 +48,17 @@ module NumberOperations =
         0 -> a
         | _ -> GCD (b, a % b)
 
+    let rec countEvenNumsThatNotMutuallyPrimeWithNumber (current: int) (num: int) (accum: int)  =
+        match current with
+        | x when x >= num -> accum
+        | x when GCD(num, x) <> 1 && x % 2 = 0 -> countEvenNumsThatNotMutuallyPrimeWithNumber (current + 1) num (accum + 1)
+        | _ -> countEvenNumsThatNotMutuallyPrimeWithNumber (current + 1) num accum
 
 
-    //let rec maxSimpleDivider (num: int) (counter: int) : int =
-    //    match num with
-    //    0 -> counter
-    //    | GCD(num, )
-
-    //let rec bypassMutuallyPrimeComponentsInNum (num: int) (func: int -> int -> int) (accum: int) : int =
-    //    match num with
-    //    0 -> accum
-    //    | _ -> bypassMutuallyPrimeComponentsInNum (num - 1) func accum
+    let rec bypassMutuallyPrimeComponentsInNumber (num: int) (func: int -> int -> int) (accum: int) : int =
+        match num with
+        0 -> accum
+        | _ -> bypassMutuallyPrimeComponentsInNumber (num - 1) func accum
 
     let maxDigitNotDividesOn3 (num: int) : int =
         bypassDigitsWithCondition num (fun a b -> if a > b then a else b) 0 (fun a -> if a % 3 <> 0 then true else false)
