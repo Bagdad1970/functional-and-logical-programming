@@ -100,7 +100,7 @@ let main (args : string[]) =
     let mult = fun a b -> a * b
     let mult_digits = NumberOperations.bypassDigits 1234 mult 1
     System.Console.WriteLine("Произведение цифр числа: {0}", mult_digits)
-*)
+
 
     let min_function = fun a b -> if a < b then a else b
     let evenCondition = fun a -> if a % 2 = 0 then true else false
@@ -122,10 +122,15 @@ let main (args : string[]) =
     let mult_digits = NumberOperations.bypassDigitsWithCondition 1234 mult 1 notThree
     System.Console.WriteLine("Произведение цифр числа, которые не равны 3: {0}", mult_digits)
 
+
     System.Console.Write("Какой Ваш любимый язык: ")
     let lang_choice = System.Console.ReadLine()
     favouriteLanguage lang_choice
-    favouriteLanguage "Ruby"
-    favouriteLanguage "PHP"
+
+*)
+
+    System.Console.WriteLine("Максимальная цифра, не делящаяся на 3: {0}", (NumberOperations.maxDigitNotDividesOn3 18404))
+
+
 
     0
