@@ -49,7 +49,7 @@ let chooseMethod (func_num: int, num: int) : unit =
 let main (args : string[]) =
     printfn "Hello, World"
 
-(*
+    // Задание 2
     System.Console.WriteLine("Введите коэффициенты квадратного уравения a, b, c:")
     let a = Double.Parse(System.Console.ReadLine())
     let b = Double.Parse(System.Console.ReadLine())
@@ -62,6 +62,7 @@ let main (args : string[]) =
         | Quadratic(x, y) -> System.Console.WriteLine("Корни: {0} {1}", x, y)
 
 
+    // Задание 3
     System.Console.WriteLine("Введите радиус и высоту цилиндра:")
     let r = Double.Parse(System.Console.ReadLine())
     let h = Double.Parse(System.Console.ReadLine())
@@ -72,6 +73,7 @@ let main (args : string[]) =
     let volume_carry = volume_cylinder_through_carry r h
     System.Console.WriteLine("(Каррирование) Объем цилиндра с радиусом основания {0} и высотой {1}: {2}", r, h, volume_carry)
 
+    // Задание 4
     System.Console.WriteLine("Введите число:")
     let num = System.Int32.Parse(Console.ReadLine())
 
@@ -79,11 +81,13 @@ let main (args : string[]) =
     System.Console.WriteLine("Сумма цифр числа: {0}", (NumberOperations.processDigitsRecursionToTop num (+) ) )
     System.Console.WriteLine("Прозведение цифр числа: {0}", (NumberOperations.processDigitsRecursionToTop num (*) ) )
 
+    // Задание 5
     System.Console.WriteLine("Рекурсия вниз")
     System.Console.WriteLine("Сумма цифр числа: {0}", (NumberOperations.processDigitsRecursionToDown (+) 0 num  ) )
     System.Console.WriteLine("Прозведение цифр числа: {0}", (NumberOperations.processDigitsRecursionToDown (*) 1 num ) )
 
 
+    // Задание 6
     let factor = NumberOperations.chooseFunction false
     Console.WriteLine("Результат: {0}", (factor 1 6))
     Console.WriteLine("Результат: {0}", (factor 1 5))
@@ -92,6 +96,7 @@ let main (args : string[]) =
     Console.WriteLine("Результат: {0}", (factor1 0 12345))
     Console.WriteLine("Результат: {0}", (factor1 0 1236781))
 
+    // Задание 7-8
     let min_function = fun a b -> if a < b then a else b
     let min_digit = NumberOperations.bypassDigits 1234 min_function 10
     System.Console.WriteLine("Минимальная цифра числа: {0}", min_digit)
@@ -109,6 +114,7 @@ let main (args : string[]) =
     System.Console.WriteLine("Произведение цифр числа: {0}", mult_digits)
 
 
+    // Задание 9 - 10
     let min_function = fun a b -> if a < b then a else b
     let evenCondition = fun a -> if a % 2 = 0 then true else false
     let min_digit = NumberOperations.bypassDigitsWithCondition 1234 min_function 10 evenCondition
@@ -130,6 +136,7 @@ let main (args : string[]) =
     System.Console.WriteLine("Произведение цифр числа, которые не равны 3: {0}", mult_digits)
 
 
+    // Задание 11
     System.Console.Write("Какой Ваш любимый язык: ")
     let lang_choice = System.Console.ReadLine()
     favouriteLanguage lang_choice
@@ -140,7 +147,6 @@ let main (args : string[]) =
     // Задание 16.1
     let res = NumberOperations.countEvenNumsThatNotMutuallyPrimeWithNumber 1 20 0
     System.Console.WriteLine("{0}", res)
-
 
 
     // Задание 13
@@ -164,7 +170,7 @@ let main (args : string[]) =
     let num = Console.ReadLine() |> int
     let res = NumberOperations.method3 num
     System.Console.WriteLine("Метод 3: {0}", res)
-*)
+
 
     // Задание 20
     Console.Write("Выберите метод: ")
