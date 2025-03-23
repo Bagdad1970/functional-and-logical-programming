@@ -158,14 +158,14 @@ let main (args : string[]) =
     let num = 15
     let res = NumberOperations.bypassMutuallyPrimeWithCondition 1 num (+) 0 (fun a -> a % 2 <> 0)
     System.Console.WriteLine("Сумма нечетных взаимно-простых чисел от 1 до {0} есть {1}", num, res)
-*)
-    
+
+
     //Задание 16.3
     let num = Console.ReadLine() |> int
     let res = NumberOperations.method3 num
     System.Console.WriteLine("Метод 3: {0}", res)
+*)
 
-(*
     // Задание 20
     Console.Write("Выберите метод: ")
     let func_num = Console.ReadLine() |> int
@@ -173,6 +173,5 @@ let main (args : string[]) =
     let num = Console.ReadLine() |> int
     chooseMethod (func_num, num)
 
-*)
 
     0
