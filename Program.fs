@@ -37,6 +37,13 @@ let favouriteLanguage (lang: string) : unit =
 
     result |> System.Console.WriteLine
 
+let chooseMethod (func_num: int, num: int) : unit =
+    match func_num with
+    1 -> NumberOperations.countEvenNumsThatNotMutuallyPrimeWithNumber 1 num 0 |> Console.WriteLine
+    | 2 -> NumberOperations.maxDigitNotDividesOn3 num |> Console.WriteLine
+    | 3 -> NumberOperations.method3 num |> Console.WriteLine
+    | _ -> Console.WriteLine("Неверный номер")
+
 
 [<EntryPoint>]
 let main (args : string[]) =
@@ -145,13 +152,27 @@ let main (args : string[]) =
     let num = Console.ReadLine()
     let res = NumberOperations.EulerFunction (int num)
     System.Console.WriteLine("Функция Эйлера от {0} есть {1}", num, res)
-*)
+
 
     // Задание 15
     let num = 15
     let res = NumberOperations.bypassMutuallyPrimeWithCondition 1 num (+) 0 (fun a -> a % 2 <> 0)
     System.Console.WriteLine("Сумма нечетных взаимно-простых чисел от 1 до {0} есть {1}", num, res)
+*)
+    
+    //Задание 16.3
+    let num = Console.ReadLine() |> int
+    let res = NumberOperations.method3 num
+    System.Console.WriteLine("Метод 3: {0}", res)
 
+(*
+    // Задание 20
+    Console.Write("Выберите метод: ")
+    let func_num = Console.ReadLine() |> int
+    Console.Write("Введите число: ")
+    let num = Console.ReadLine() |> int
+    chooseMethod (func_num, num)
 
+*)
 
     0

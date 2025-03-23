@@ -63,6 +63,7 @@ module NumberOperations =
         | x when GCD(num, x) = 1 -> bypassMutuallyPrimeComponentsInNumber (current+1) num func (func current accum)
         | _ -> bypassMutuallyPrimeComponentsInNumber (current + 1) num func accum
 
+
     let EulerFunction (num: int) : int =
         bypassMutuallyPrimeComponentsInNumber 1 num (fun x acc -> acc + 1) 0
 
@@ -72,3 +73,24 @@ module NumberOperations =
         | x when GCD (num, x) = 1 && condition x -> 
             bypassMutuallyPrimeWithCondition (current + 1) num func (func accum current) condition
         | _ -> bypassMutuallyPrimeWithCondition (current + 1) num func accum condition
+    let rec bypassNotMutuallyPrimeWithCondition (current: int) (num: int) (func: int -> int -> int) (accum: int) (condition: int -> bool) =
+        match current with
+        x when x >= num -> accum
+        | x when GCD (num, x) <> 1 && condition x -> 
+            bypassNotMutuallyPrimeWithCondition (current + 1) num func (func accum current) condition
+        | _ -> bypassNotMutuallyPrimeWithCondition (current + 1) num func accum condition
+
+    let rec smallestDivisor (current: int) (num: int) (accum: int) : int =
+        match current with
+        x when x >= num -> accum
+        | x when num % x = 0 && x < accum -> smallestDivisor (current + 1) num x
+        | _ -> smallestDivisor (current + 1) num accum
+
+    let findMaxNonCoprime (num: int) : int =
+        let smallest_div= smallestDivisor 2 num 10
+        bypassNotMutuallyPrimeWithCondition 1 num (fun acc x -> max acc x) 0 (fun x -> x % smallest_div <> 0)
+
+    let method3 (num: int) =
+        let maxNonCoprime = findMaxNonCoprime num
+        let digitSum = bypassDigitsWithCondition num (+) 0 (fun x -> x < 5)
+        maxNonCoprime * digitSum
