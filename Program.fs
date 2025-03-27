@@ -1,6 +1,5 @@
 ﻿open System
 open WorkingWithNumbers
-open WorkingWithLists
 
 
 type SolveQuadratic =
@@ -46,7 +45,7 @@ let chooseMethod (func_num: int, num: int) : unit =
     | _ -> Console.WriteLine("Неверный номер")
 
 
-let introductionInvokes =
+let introductionInvokers() =
     printfn "Hello, World"
 
     // Задание 2
@@ -179,19 +178,18 @@ let introductionInvokes =
     let num = Console.ReadLine() |> int
     chooseMethod (func_num, num)
 
-let listInvokers =
+let listInvokers () =
 
     // Задание 1
     System.Console.Write("Введите количество элементов списка: ")
     let n = System.Console.ReadLine() |> int
-    printfn "Введенный список: %A" ( n)
-
+    printfn "Введенный список: %A" (ListOperations.readList n)
 
 
 
 [<EntryPoint>]
 let main (args : string[]) =
 
-
+    listInvokers ()
 
     0
