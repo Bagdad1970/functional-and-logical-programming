@@ -179,7 +179,7 @@ let introductionInvokers() =
     chooseMethod (func_num, num)
 
 let listInvokers () =
-
+(*
     // Задание 1
     System.Console.Write("Введите количество элементов списка: ")
     let n = System.Console.ReadLine() |> int
@@ -189,6 +189,11 @@ let listInvokers () =
     // Задание 2
     System.Console.WriteLine("Вывод элементов списка: ")
     ListOperations.writeList list
+
+*)
+    // Задание 3
+    let reducedList = ListOperations.reduceListWithCondition [1; 6; 8; 10] (*) (fun a -> a % 2 = 0) 1
+    System.Console.WriteLine("Свернутое значение списка: {0}", reducedList)
 
 
 [<EntryPoint>]
