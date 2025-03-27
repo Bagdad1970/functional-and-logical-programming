@@ -183,8 +183,12 @@ let listInvokers () =
     // Задание 1
     System.Console.Write("Введите количество элементов списка: ")
     let n = System.Console.ReadLine() |> int
-    printfn "Введенный список: %A" (ListOperations.readList n)
+    let list = ListOperations.readList n
+    printfn "Введенный список: %A" list
 
+    // Задание 2
+    System.Console.WriteLine("Вывод элементов списка: ")
+    ListOperations.writeList list
 
 
 [<EntryPoint>]

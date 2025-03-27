@@ -1,5 +1,5 @@
 namespace WorkingWithNumbers
-
+open System
 
 module NumberOperations = 
 
@@ -112,3 +112,10 @@ module ListOperations =
         | x when x < 0 -> failwith "Количество элементов не может быть отрицательным"
         | 0 -> []
         | _ -> failwith "Непредвиденная ошибка"
+
+    let rec writeList list =
+        match list with
+        | [] -> ()
+        | head :: tail -> 
+            System.Console.WriteLine(head.ToString())
+            writeList tail
