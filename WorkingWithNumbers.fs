@@ -1,6 +1,7 @@
 namespace WorkingWithNumbers
 open System
 
+
 module NumberOperations = 
 
     let rec processDigitsRecursionToDown (oper: int -> int -> int) (accum: int) (num: int)   = 
@@ -153,3 +154,9 @@ module ListOperations =
             frequencyMap |> Map.toSeq |> Seq.maxBy snd
         
         mostFrequent
+
+
+module StringOperations =
+    let isPalindrom (str: string) =
+        let reversedString = str.ToLower() |> Seq.rev |> System.String.Concat
+        String.Equals (str, reversedString)

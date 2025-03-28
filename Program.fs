@@ -205,11 +205,17 @@ let listInvokers () =
     let countOdd = ListOperations.countOddInList [1; 5; 0; -2]
     System.Console.WriteLine("Количество нечетных элементов в списке: {0}", countOdd)
 
-*)
+
     // Задание 5
     let most_frequent = ListOperations.theMostFrequentInList [1; 5; 1; -6; 1; 0; 7; 3; 3]
     System.Console.WriteLine("Элемент {0} в списке повторяется наибольшее число раз: {1}", (fst most_frequent), (snd most_frequent))
 
+
+*)
+
+    // Задание 19
+    System.Console.WriteLine("Строка {0} является палиндромом? {1}", "aboba", StringOperations.isPalindrom "aboba")
+    System.Console.WriteLine("Строка {0} является палиндромом? {1}", "abobo", StringOperations.isPalindrom "abobo")
 
 [<EntryPoint>]
 let main (args : string[]) =
