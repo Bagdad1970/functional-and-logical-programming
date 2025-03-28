@@ -213,9 +213,19 @@ let listInvokers () =
 
 *)
 
+    // Задание 10.1
+    let array = [| 1; 2; -2; 7; 23 |]
+    System.Console.WriteLine("Индексы массива: {0}", sprintf "%A" (ListOperations.indexesOfDecreasingArray array))
+
+
+
+
+let stringInvokers () =
+    
     // Задание 19
     System.Console.WriteLine("Строка {0} является палиндромом? {1}", "aboba", StringOperations.isPalindrom "aboba")
     System.Console.WriteLine("Строка {0} является палиндромом? {1}", "abobo", StringOperations.isPalindrom "abobo")
+
 
 [<EntryPoint>]
 let main (args : string[]) =

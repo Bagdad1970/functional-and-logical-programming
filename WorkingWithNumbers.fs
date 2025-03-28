@@ -3,7 +3,6 @@ open System
 
 
 module NumberOperations = 
-
     let rec processDigitsRecursionToDown (oper: int -> int -> int) (accum: int) (num: int)   = 
         if num < 10 then
             oper accum num
@@ -154,6 +153,12 @@ module ListOperations =
             frequencyMap |> Map.toSeq |> Seq.maxBy snd
         
         mostFrequent
+
+    let indexesOfDecreasingArray (array: int[]) =
+        array
+        |> Array.indexed
+        |> Array.sortByDescending snd
+        |> Array.map fst  
 
 
 module StringOperations =
