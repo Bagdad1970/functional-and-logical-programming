@@ -158,8 +158,13 @@ module ListOperations =
         array
         |> Array.indexed
         |> Array.sortByDescending snd
-        |> Array.map fst  
+        |> Array.map fst
 
+    let countElemsInInterval (array: int[]) (a: int) (b: int) : int =
+        let start_index = max a 0
+        let end_index = min b (array.Length - 1)
+
+        end_index - start_index + 1
 
 module StringOperations =
     let isPalindrom (str: string) =

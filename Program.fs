@@ -218,6 +218,11 @@ let listInvokers () =
     System.Console.WriteLine("Индексы массива: {0}", sprintf "%A" (ListOperations.indexesOfDecreasingArray array))
 
 
+    // Задание 10.2
+    let array = [| 1; 2; -2; 7; 23 |]
+    let a, b = 1, 10
+    System.Console.WriteLine("Количество элементов в интервале {0} {1}: {2}", a, b, (ListOperations.countElemsInInterval array a b))
+
 
 
 let stringInvokers () =
