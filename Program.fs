@@ -213,25 +213,32 @@ let listInvokers () =
 
 *)
 
-    // Задание 10.1
     let array = [| 1; 2; -2; 7; 23 |]
+
+    // Задание 10.1
     System.Console.WriteLine("Индексы массива: {0}", sprintf "%A" (ListOperations.indexesOfDecreasingArray array))
 
 
     // Задание 10.2
-    let array = [| 1; 2; -2; 7; 23 |]
     let a, b = 1, 10
     System.Console.WriteLine("Количество элементов в интервале {0} {1}: {2}", a, b, (ListOperations.countElemsInInterval array a b))
 
     // Задание 10.3
-    let array = [| 1; 2; 6; 7; 23; 23 |]
     System.Console.WriteLine("Два максимума в массиве: {0}", (ListOperations.twoMaxInArray array))
 
     // Задание 10.4
-    let array = [| 1; 2; 6; 7; 23; 23 |]
     let lb = 2
     let rb = 10
     System.Console.WriteLine("Элементы в промежутке от {0} до {1}: {2}", lb, rb, sprintf "%A" (ListOperations.elemsInRange array lb rb))
+
+    // Задание 10.6
+    let list = [ 5; 1; 7; 1; 2; 9; 6; 8; 3; 1; 8; 5; 1; 5; 2; 8; 8 ]
+    let frequent_list = (ListOperations.elemFrequentsInList list Map.empty)
+    printfn "Частоты списка: %A" frequent_list
+    let elemsThreeTimes = ListOperations.elemFrequentsThreeTimes frequent_list
+    printfn "Список элементов, встречающихся более 3 раз: %A" elemsThreeTimes
+
+    
 
 
 let stringInvokers () =
