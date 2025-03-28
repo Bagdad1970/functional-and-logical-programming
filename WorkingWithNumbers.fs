@@ -166,6 +166,15 @@ module ListOperations =
 
         end_index - start_index + 1
 
+    let twoMaxInArray (array: int[]) =
+        let first_max = Array.max array
+        let second_max = Array.max (Array.filter (fun a -> a <> first_max) array)
+
+        (first_max, second_max)
+
+    let elemsInRange (array: int[]) lb rb =
+        Array.filter (fun a -> a >= lb && a <= rb) array
+
 module StringOperations =
     let isPalindrom (str: string) =
         let reversedString = str.ToLower() |> Seq.rev |> System.String.Concat

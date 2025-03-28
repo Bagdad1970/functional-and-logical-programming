@@ -223,6 +223,15 @@ let listInvokers () =
     let a, b = 1, 10
     System.Console.WriteLine("Количество элементов в интервале {0} {1}: {2}", a, b, (ListOperations.countElemsInInterval array a b))
 
+    // Задание 10.3
+    let array = [| 1; 2; 6; 7; 23; 23 |]
+    System.Console.WriteLine("Два максимума в массиве: {0}", (ListOperations.twoMaxInArray array))
+
+    // Задание 10.4
+    let array = [| 1; 2; 6; 7; 23; 23 |]
+    let lb = 2
+    let rb = 10
+    System.Console.WriteLine("Элементы в промежутке от {0} до {1}: {2}", lb, rb, sprintf "%A" (ListOperations.elemsInRange array lb rb))
 
 
 let stringInvokers () =
