@@ -213,6 +213,11 @@ let listInvokers () =
 
 *)
 
+    // Задание 10
+    let list = [ "stroka1"; "stroka2234"; "abcdef"; "primarhi" ]
+    printfn "Отсортированный по длине список строк: %A" (ListOperations.sortStringsByLength list)
+
+
     let array = [| 1; 2; -2; 7; 23 |]
 
     // Задание 10.1

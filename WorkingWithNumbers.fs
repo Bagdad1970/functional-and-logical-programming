@@ -158,6 +158,9 @@ module ListOperations =
     let elemFrequentsThreeTimes map =
         Map.filter (fun _ value -> value > 3) map
 
+    let sortStringsByLength list =
+        List.sortBy (String.length) list
+
 
 module ArrayOperations =
     
