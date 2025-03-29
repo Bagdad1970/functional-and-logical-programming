@@ -231,6 +231,11 @@ let listInvokers () =
     let rb = 10
     System.Console.WriteLine("Элементы в промежутке от {0} до {1}: {2}", lb, rb, sprintf "%A" (ArrayOperations.elemsInRange array lb rb))
 
+
+    // Задание 10.5
+    let alternate_array = [| box 1; box 1; box 2.5; box 0; box 1.0; box 3 |]
+    System.Console.WriteLine("Чередуются ли int и float элементы в массиве: {0}", ArrayOperations.areFloatAndIntegerAlternate alternate_array)
+
     // Задание 10.6
     let list = [ 5; 1; 7; 1; 2; 9; 6; 8; 3; 1; 8; 5; 1; 5; 2; 8; 8 ]
     let frequent_list = (ListOperations.elemFrequentsInList list Map.empty)

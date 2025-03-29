@@ -182,6 +182,30 @@ module ArrayOperations =
     let elemsInRange (array: int[]) lb rb =
         Array.filter (fun a -> a >= lb && a <= rb) array
 
+    let areFloatAndIntegerAlternate (array: obj[]) =
+        let rec check index prevType =
+            match index >= array.Length with
+            | true -> true
+            | false ->
+                match array.[index], prevType with
+                | (:? int), None -> 
+                    check (index + 1) (Some true)
+                | (:? float), None -> 
+                    check (index + 1) (Some false)
+                | (:? int), Some false -> 
+                    check (index + 1) (Some true)
+                | (:? float), Some true -> 
+                    check (index + 1) (Some false)
+                | _, _ -> false
+        
+        match array.Length with
+        | 0 | 1 -> true
+        | _ ->
+            match array.[0] with
+            | :? int -> check 1 (Some true)
+            | :? float -> check 1 (Some false)
+            | _ -> false
+
     let filterElemsDivisibleOn3 (array: int[]) =
         Array.filter (fun a -> a % 3 = 0) array
 
