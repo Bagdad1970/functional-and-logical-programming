@@ -248,6 +248,10 @@ let listInvokers () =
     let elemsThreeTimes = ListOperations.elemFrequentsThreeTimes frequent_list
     printfn "Список элементов, встречающихся более 3 раз: %A" elemsThreeTimes
 
+    // Задание 8
+    let list = [ 1; 2; 3; 4; 5; 9; 16; 25 ]
+    System.Console.WriteLine("Количество элементов, которые являются квадратом некоторого элементоа: {0}", (ListOperations.countSquareElements list))
+
 
     // Задание 18
     let array = [| 1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12 |]

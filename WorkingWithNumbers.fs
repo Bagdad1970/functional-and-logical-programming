@@ -161,6 +161,11 @@ module ListOperations =
     let sortStringsByLength list =
         List.sortBy (String.length) list
 
+    let countSquareElements list =
+        list
+        |> List.filter (fun x -> List.exists (fun y -> y * y = x) list)
+        |> List.length
+
 
 module ArrayOperations =
     
