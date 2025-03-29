@@ -155,6 +155,12 @@ module ListOperations =
         
         mostFrequent
 
+    let elemFrequentsThreeTimes map =
+        Map.filter (fun _ value -> value > 3) map
+
+
+module ArrayOperations =
+    
     let indexesOfDecreasingArray (array: int[]) =
         array
         |> Array.indexed
@@ -176,8 +182,10 @@ module ListOperations =
     let elemsInRange (array: int[]) lb rb =
         Array.filter (fun a -> a >= lb && a <= rb) array
 
-    let elemFrequentsThreeTimes map =
-        Map.filter (fun _ value -> value > 3) map
+    let filterElemsDivisibleOn3 (array: int[]) =
+        Array.filter (fun a -> a % 3 = 0) array
+
+
 
 module StringOperations =
     let isPalindrom (str: string) =
