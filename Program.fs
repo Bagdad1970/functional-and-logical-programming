@@ -268,9 +268,20 @@ let stringInvokers () =
     System.Console.WriteLine("Строка {0} является палиндромом? {1}", "abobo", StringOperations.isPalindrom "abobo")
 
 
+let list_map func list =
+    let rec map_list func list accum =
+        match list with
+        [] -> List.rev accum
+        | head :: tail -> map_list func tail (func(head) :: accum)
+
+    map_list func list []
+
 [<EntryPoint>]
 let main (args : string[]) =
 
-    listInvokers ()
+    //listInvokers ()
+
+
+    printfn "Отсортированный по длине список строк: %A" (list_map (fun a -> a + 10) [ 1;6;3;5;-1;0 ])
 
     0
