@@ -1,5 +1,6 @@
 ﻿open System
 open WorkingWithNumbers
+open Geometry
 
 
 type SolveQuadratic =
